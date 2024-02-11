@@ -4,14 +4,7 @@ from django.shortcuts import render
 from django.utils import timezone
 
 
-# def get_visit_duration(visit):
-#     current_time = timezone.localtime().replace(microsecond=0)
-#     visit_duration = (current_time - visit.entered_at)
-#     return visit_duration
-
-
 def storage_information_view(request):
-    # Программируем здесь
     active_visits = Visit.objects.filter(leaved_at=None)
     non_closed_visits = list()
     for visit in active_visits:
@@ -25,6 +18,6 @@ def storage_information_view(request):
         non_closed_visits.append(visitor)
 
     context = {
-        'non_closed_visits': non_closed_visits,  # не закрытые посещения
+        'non_closed_visits': non_closed_visits
     }
     return render(request, 'storage_information.html', context)

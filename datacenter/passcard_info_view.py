@@ -5,7 +5,6 @@ from django.shortcuts import render, get_object_or_404
 
 def passcard_info_view(request, passcode):
     passcard = get_object_or_404(Passcard, passcode=passcode)
-    # Программируем здесь
     this_passcard_visits = list()
     visits = Visit.objects.filter(passcard=passcard)
     for visit in visits:
