@@ -1,7 +1,5 @@
-from datacenter.models import Passcard
 from datacenter.models import Visit
 from django.shortcuts import render
-from django.utils import timezone
 
 
 def storage_information_view(request):
