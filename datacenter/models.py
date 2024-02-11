@@ -35,6 +35,4 @@ class Visit(models.Model):
 
     def is_visit_long(self):
         strange_duration = 3600
-        if self.get_duration().total_seconds() >= strange_duration:
-            return True
-        return False
+        return self.get_duration().total_seconds() >= strange_duration
